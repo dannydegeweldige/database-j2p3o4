@@ -45,6 +45,7 @@ $alles = $tafel->selectAllTafel()->fetchAll();
                 echo "<td>" . $tafel["nummer"] . "</td>";
                 echo "<td>" . $tafel["Omschrijving"] . "</td>";
                 echo "<td><a href='edit-tafel.php?id=" . $tafel["tafel_id"] . "'>edit</a></td>";
+                echo "<td><a href='delete-tafel.php?id=" . $tafel["tafel_id"] . "'>delete</a></td>";
                 ?>
             </tr>
         <?php } ?>

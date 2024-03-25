@@ -15,11 +15,11 @@ class product {
     }
 
     public function updateProduct(String $product_naam, int $product_prijs, int $product_id) {
-        return $this->dbh->execute("UPDATE $this->table SET naam = ?, prijs = ? WHERE productCode = ?", [$product_naam, $product_prijs, $product_id]);
+        return $this->dbh->execute("UPDATE $this->table SET product_naam = ?, product_prijs = ? WHERE product_id = ?", [$product_naam, $product_prijs, $product_id]);
     }
 
     public function deleteProduct($product_id) {
-        return $this->dbh->execute("DELETE FROM $this->table WHERE productCode = ?", [$product_id]);
+        return $this->dbh->execute("DELETE FROM $this->table WHERE product_id = ?", [$product_id]);
     }
 
     public function getAllProduct(int $id = null) {
@@ -27,7 +27,7 @@ class product {
     }
 
     public function getOneProduct(int $product_id) {
-        return $this->dbh->execute("SELECT * FROM $this->table WHERE productCode = ?", [$product_id]);
+        return $this->dbh->execute("SELECT * FROM $this->table WHERE product_id = ?", [$product_id]);
     }
 
     public function selectAllProduct() {

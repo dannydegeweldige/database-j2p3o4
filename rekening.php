@@ -15,11 +15,11 @@ class Rekening {
     }
 
     public function updateRekening(String $btw, int $totaalprijs, int $rekening_id) {
-        return $this->dbh->execute("UPDATE $this->table SET naam = ?, prijs = ? WHERE rekeningCode = ?", [$btw, $totaalprijs, $rekening_id]);
+        return $this->dbh->execute("UPDATE $this->table SET btw = ?, totaalprijs = ? WHERE rekening_id = ?", [$btw, $totaalprijs, $rekening_id]);
     }
 
     public function deleteRekening($rekening_id) {
-        return $this->dbh->execute("DELETE FROM $this->table WHERE rekeningCode = ?", [$rekening_id]);
+        return $this->dbh->execute("DELETE FROM $this->table WHERE rekening_id = ?", [$rekening_id]);
     }
 
     public function getAllRekening(int $id = null) {
@@ -27,7 +27,7 @@ class Rekening {
     }
 
     public function getOneRekening(int $rekening_id) {
-        return $this->dbh->execute("SELECT * FROM $this->table WHERE rekeningCode = ?", [$rekening_id]);
+        return $this->dbh->execute("SELECT * FROM $this->table WHERE rekening_id = ?", [$rekening_id]);
     }
 
     public function selectAllRekening() {
@@ -35,7 +35,7 @@ class Rekening {
     }
 
     public function selectOneRekening($rekening_id) {
-        return $this->dbh->execute("SELECT * FROM rekening WHERE rekeningCode = ?", [$rekening_id]);
+        return $this->dbh->execute("SELECT * FROM rekening WHERE rekening_id = ?", [$rekening_id]);
     }
 }
 ?>

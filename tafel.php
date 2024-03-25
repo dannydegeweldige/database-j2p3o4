@@ -15,11 +15,11 @@ class Tafel {
     }
 
     public function updateTafel(String $nummer, string $omschrijving, int $tafel_id) {
-        return $this->dbh->execute("UPDATE $this->table SET naam = ?, prijs = ? WHERE tafelCode = ?", [$nummer, $omschrijving, $tafel_id]);
+        return $this->dbh->execute("UPDATE $this->table SET nummer = ?, omschrijving = ? WHERE tafel_id = ?", [$nummer, $omschrijving, $tafel_id]);
     }
 
     public function deleteTafel($tafel_id) {
-        return $this->dbh->execute("DELETE FROM $this->table WHERE tafelCode = ?", [$tafel_id]);
+        return $this->dbh->execute("DELETE FROM $this->table WHERE tafel_id = ?", [$tafel_id]);
     }
 
     public function getAllTafel(int $id = null) {
@@ -27,7 +27,7 @@ class Tafel {
     }
 
     public function getOneTafel(int $tafel_id) {
-        return $this->dbh->execute("SELECT * FROM $this->table WHERE tafelCode = ?", [$tafel_id]);
+        return $this->dbh->execute("SELECT * FROM $this->table WHERE tafel_id = ?", [$tafel_id]);
     }
 
     public function selectAllTafel() {
@@ -35,7 +35,7 @@ class Tafel {
     }
 
     public function selectOneTafel($tafel_id) {
-        return $this->dbh->execute("SELECT * FROM tafel WHERE tafelCode = ?", [$tafel_id]);
+        return $this->dbh->execute("SELECT * FROM tafel WHERE tafel_id = ?", [$tafel_id]);
     }
 }
 ?>

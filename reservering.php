@@ -15,11 +15,11 @@ class Reservering {
     }
 
     public function updateReservering(String $begintijd, string $eindtijd, int $reservering_id) {
-        return $this->dbh->execute("UPDATE $this->table SET naam = ?, prijs = ? WHERE reserveringCode = ?", [$begintijd, $eindtijd, $reservering_id]);
+        return $this->dbh->execute("UPDATE $this->table SET begintijd = ?, eindtijd = ? WHERE reservering_id = ?", [$begintijd, $eindtijd, $reservering_id]);
     }
-
+    
     public function deleteReservering($reservering_id) {
-        return $this->dbh->execute("DELETE FROM $this->table WHERE reserveringCode = ?", [$reservering_id]);
+        return $this->dbh->execute("DELETE FROM $this->table WHERE reservering_id = ?", [$reservering_id]);
     }
 
     public function getAllReservering(int $id = null) {
@@ -27,7 +27,7 @@ class Reservering {
     }
 
     public function getOneReservering(int $reservering_id) {
-        return $this->dbh->execute("SELECT * FROM $this->table WHERE reserveringCode = ?", [$reservering_id]);
+        return $this->dbh->execute("SELECT * FROM $this->table WHERE reservering_id = ?", [$reservering_id]);
     }
 
     public function selectAllReservering() {
@@ -35,7 +35,7 @@ class Reservering {
     }
 
     public function selectOneReservering($reservering_id) {
-        return $this->dbh->execute("SELECT * FROM reservering WHERE reserveringCode = ?", [$reservering_id]);
+        return $this->dbh->execute("SELECT * FROM reservering WHERE reservering_id = ?", [$reservering_id]);
     }
 }
 ?>

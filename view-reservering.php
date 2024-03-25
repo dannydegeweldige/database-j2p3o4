@@ -45,6 +45,7 @@ $alles = $reservering->selectAllReservering()->fetchAll();
                 echo "<td>" . $reservering["begintijd"] . "</td>";
                 echo "<td>" . $reservering["eindtijd"] . "</td>";
                 echo "<td><a href='edit-reservering.php?id=" . $reservering["reservering_id"] . "'>edit</a></td>";
+                echo "<td><a href='delete-reservering.php?id=" . $reservering["reservering_id"] . "'>delete</a></td>";
                 ?>
             </tr>
         <?php } ?>

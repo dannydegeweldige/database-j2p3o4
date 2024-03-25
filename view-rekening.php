@@ -43,6 +43,7 @@ $alles = $rekening->selectAllRekening()->fetchAll();
                 echo "<td>" . $rekening["btw"] . "</td>";
                 echo "<td>" . $rekening["totaalprijs"] . "</td>";
                 echo "<td><a href='edit-rekening.php?id=" . $rekening["rekening_id"] . "'>edit</a></td>";
+                echo "<td><a href='delete-rekening.php?id=" . $rekening["rekening_id"] . "'>delete</a></td>";
             ?>
         </tr>
         <?php } ?>
